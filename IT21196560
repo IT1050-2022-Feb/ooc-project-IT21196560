@@ -1,0 +1,196 @@
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+
+
+class Users{
+
+  protected:
+    string first_name;
+    string last_name;
+    Admin *admn;
+
+  public:
+    Users(){
+
+      cout << "Users called" << endl;
+      
+    }
+
+    Users( string f_name, string l_name){
+
+      first_name = f_name;
+      last_name = l_name;
+      
+      
+      
+      
+    }
+
+    void viewProperties(){
+      
+    }
+   
+
+};
+
+class RegisteredCustomer : public Users{
+
+  private:
+        string nic;
+        string address;
+        int age;
+        string gender;
+        string email;
+        string username;
+        string customer_id;
+        string password;
+        Agent *agnt;
+        Payment *pymnt;
+
+  public:
+        RegisteredCustomer(){
+
+            cout << "RegisteredCustomer called" << endl;
+
+          
+        }
+
+        RegisteredCustomer( string nic, string addrss, int age, string gndr, string email, string usrname, string cstmr_id, string psswrd, string f_name, string l_name) : Users(f_name, l_name){
+
+            nic = nic;
+            address = addrss;
+            age = age;
+            gender = gndr;
+            email = email;
+            username = usrname;
+            customer_id = cstmr_id;
+            password = psswrd;
+
+          
+        }
+
+        void viewAgents(){
+          
+        }
+
+        void purchaseProperty(){
+          
+        }
+
+        void postAd(){
+          
+        }
+
+        void updateAd(){
+          
+        }
+
+        void postFeedback(){
+          
+        }
+
+       ~RegisteredCustomer();
+
+        
+        
+  
+};
+
+class Guest : public Users{
+
+   public:
+
+      Guest(){
+
+            cout << "Guest called" << endl;
+
+          
+      }
+
+      Guest(string f_name, string l_name) : Users(f_name, l_name){
+        
+      }
+
+      void viewAgents(){
+
+        
+      }
+
+    	~Guest();
+      
+
+};
+
+class Agent : public Users {
+
+    private:
+        string nic;
+        string address;
+        int age;
+        string gender;
+        string email;
+        string username;
+        string agent_id;
+        string password;
+        RegisteredCustomer *cstmer[3];
+
+
+    public:
+        Agent(){
+
+            cout << "Agent called" << endl;
+
+          
+        }
+
+        Agent( string nic, string addrss, int age, string gndr, string email, string usrname, string agnt_id, string psswrd, string f_name, string l_name) : Users(f_name, l_name){
+
+            nic = nic;
+            address = addrss;
+            age = age;
+            gender = gndr;
+            email = email;
+            username = usrname;
+            agent_id = agnt_id;
+            password = psswrd;
+
+          
+        }
+
+        void postAd(){
+          
+        }
+
+        void updateAd(){
+          
+        }
+        
+        void postFeedback(){
+          
+        }
+          
+        ~Agent();
+
+};
+
+int main()
+{
+	
+	RegisteredCustomer *rc1 = new RegisteredCustomer( "7552459288", "Negambo Road, Kirimatiyana, Lunuwila", 26, "Male", "PasiN255@gmail.com", "Pasi45", "C457211252", "PasiN11", "Pasindu", "Nuwan");
+	
+	Agent *agnt1 = new Agent( "7255928840", "31 Sri Sanganandu Mawatha", 44, "Male", "kapilaSil5@gmail.com", "kapila22", "AG85627169", "kapils12", "Kapila", "De Silva");
+	
+	Guest *gst1 = new Guest( "Nihal", "Pathirana");
+	
+	
+	
+	
+	
+	delete *rc1;
+	delete *agnt1;
+	delete *gst1;
+	
+}
