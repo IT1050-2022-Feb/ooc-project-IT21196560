@@ -1,0 +1,165 @@
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+
+
+
+
+class WebsiteHandler
+{
+ private:
+ 	
+     string first_Name;
+     string last_Name;
+     string nIC;
+     string address;
+     int age;
+     string gender;
+     string email;
+     string password;
+ 
+ 
+ public: 
+
+    WebsiteHandler(){
+
+      cout << "Website Handlers called";
+      
+    }
+
+    WebsiteHandler( string f_name, string l_name, string nic, string addrss, int age, string gndr, string email, string psswrd){
+
+        first_Name = f_name;
+        last_Name = l_name;
+        nIC = nic;
+        address = addrss;
+        age = age;
+        gender = gndr;
+        email = email;
+        password = psswrd;
+      
+    }
+
+    
+ 
+    void postUserAds(){
+       
+     }
+
+    void updateUserAds(){
+       
+     }
+
+    void postFeedbacks(){
+       
+     }
+
+    void fixTechnicalerrors(){
+       
+    }
+
+    void updateWebsite(){
+       
+    }
+
+    void postAgentAds(){
+       
+    }
+
+     void updateAgentAds(){
+       
+     }
+ 
+};
+
+class Admin : public WebsiteHandler
+{
+ private:
+ 	
+        string admin_ID;
+        WebDeveloper *wbdvlpr[4];
+ 
+ public: 
+ 
+      Admin(){
+
+        cout << "Admin called";
+         
+      }
+      Admin( string f_name, string l_name, string nic, string addrss, int age, string gndr, string email, string psswrd, string admn_id) : WebsiteHandler(f_name, l_name, nic, addrss, age, gndr, email, psswrd ){
+
+        admin_ID = admn_id;
+         
+      }
+      void displayFeedbacks(){
+         
+      }
+
+       void displayuserDetails(){
+         
+      }
+
+      void displayPaymentDetails(){
+         
+      }
+
+      void displayAgentDetails(){
+         
+      }
+
+      void displayGuestDetails(){
+         
+      }
+
+      void displayProperties(){
+         
+      }
+
+      void displayWebDeveloperDetails(){
+         
+      }
+
+      ~Admin();
+        
+       
+};
+
+class WebDeveloper : WebsiteHandler
+{
+ private:
+ 	
+    string developer_ID;
+    Admin *admn[2];
+    
+ 
+ public: 
+ 
+    WebDeveloper(){
+
+        cout << "WebDeveloper called";
+      
+    }
+    WebDeveloper(string t_developer_ID, string f_name, string l_name, string nic, string addrss, int age, string gndr, string email, string psswrd ) : WebsiteHandler(f_name, l_name, nic, addrss, age, gndr, email, psswrd){
+
+        developer_ID = t_developer_ID;
+      
+    }
+ 
+};
+
+int main()
+{
+	
+	Admin *admn1 = new Admin( "Jagath", "Peris", "815676458v", "281 Panchikawatte Road, 10, Colombo", 34, "Male", "jagathp5@gmail.com", "Jagath12", "A875692300" );
+	
+	WebDeveloper *wbdvlp1 = new WebDeveloper( "D426352495", "Ravi", "Perera", "8211809155", "ST.Peters Road, Korolawella, Moratuwa", 28, "Male", "Ravip44@gmail.com", "Pravi123" );
+	
+	
+	
+	
+	delete *admn1;
+	delete *wbdvlp1;
+	
+}
