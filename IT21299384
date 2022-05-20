@@ -1,0 +1,99 @@
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+
+
+
+class Feedback
+{
+ private:
+ 	
+  string feedback_date;
+  string feedback_time;
+  string Comment;
+  int rate;
+
+ 
+ public: 
+ 
+  Feedback(){
+  
+      cout << "Feedback called";
+     
+   }
+  Feedback(string t_feedback_date, string t_feedback_time, string t_comment, int t_rate){
+  
+    feedback_date = t_feedback_date;
+    feedback_time = t_feedback_time;
+    Comment = t_comment;
+    rate = t_rate;
+      
+     
+   }
+  void displayFeedback(){
+  
+      cout << "Feedback date :- " << feedback_date << endl << "Feedback time :- " << feedback_time << endl << "Comment :- " << Comment << "Rate :- " << rate;
+     
+   }
+  
+  void addFeedbacks( WebDeveloper *W ){
+
+  }
+ 
+};
+
+class Payment {
+
+    private:
+          int payment_id;
+          int account;
+          float amount;
+          string payment_time;
+          string payment_date;
+
+    public:
+          Payment(){
+
+              cout << "Payment called";
+            
+          }
+
+          Payment( int pymnt_id, int accnt, float amnt, string pymnt_time, string pymnt_date){
+
+              payment_id = pymnt_id;
+              account = accnt;
+              amount = amnt;
+              payment_time = pymnt_time;
+              payment_date = pymnt_date;
+
+            
+          }
+
+          void getPaymnetdetails(){
+
+              cout << "Payment ID :- " << payment_id << endl << "Account Number :- " << account << endl << "Amount :- " << amount << endl << "Payment Time :- " << payment_time << endl << "Payment Date :- " << payment_date << endl;
+             
+          }
+
+          ~Payment();
+
+          
+            
+
+};
+
+int main()
+{
+	
+	
+	Feedback *fdbk1 = new Feedback( "2021/12/16", "17:25", "Have a good interface", 5);
+	
+	Payment *pymnt1 = new Payment( "PAY1808372", 969147, 2050000, "14:50", "2021/09/09");
+	
+	
+	
+	delete *fdbk1;
+	delete *pymnt1;
+}
