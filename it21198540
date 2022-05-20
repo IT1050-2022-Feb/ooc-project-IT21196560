@@ -1,0 +1,104 @@
+class Advertisement {
+
+  private:
+        string advertisement_ID;
+        string advertisement_name;
+        string advertisement_type;
+        string advertisement_date;
+        string advertisement_time;
+
+  public:
+        Advertisement(){
+
+            cout << "Advertisement is called";
+          
+        }
+
+        Advertisement( string ads_ID, string ads_name, string ads_type, string ads_date, string ads_time){
+
+          advertisement_ID = ads_ID;
+          advertisement_name = ads_name;
+          advertisement_type = ads_type;
+          advertisement_date = ads_date;
+          advertisement_time = ads_time;
+
+          
+        }
+
+        void displayAddetails(){
+
+            cout << "Advertisement ID :- " << advertisement_ID << endl << "Advertisement Name :- " << advertisement_name << endl << "Advertisement Type :- " << advertisement_type << endl << "Advertisement Date :- " << advertisement_date << "Advertisement Time :- " << advertisement_time << endl;
+          
+        }
+
+        void setAdsDetails( WebDeveloper *W ){
+
+        }
+
+        ~Advertisement();
+
+        
+
+
+
+};
+
+class Properties {
+
+  private:
+        string property_id;
+        string property_type;
+        string property_name;
+        float property_price;
+        string property_description;
+
+  public:
+      Properties(){
+
+          cout << "Property called";
+        
+      }
+
+      Properties( string prpty_id, string prpty_type, string prpty_name, float prpty_price, string prpty_dis ){
+
+          property_id = prpty_id;
+          property_type = prpty_type;
+          property_name = prpty_name;
+          property_price = prpty_price;
+          property_description = prpty_dis;
+        
+      }
+
+      void displayPropertyDetails(){
+
+          cout << "Property ID :- " <<  property_id << endl << "Property Type :- " << property_type << endl << "Property_Name :- " << property_name << endl << "Property Price :- " << property_price << endl << "Property Description :- " << property_description << endl;
+        
+      }
+
+      void setPropertyDetails(  Advertisement *A ){
+        
+      }
+
+      ~Properties();
+
+    
+
+};
+
+int main()
+
+{
+	
+	Advertisement *ad1 = new Advertisement( "9169685142", "Apartment with 3 rooms, Dehiwala", "Property", "2021/04/22", "15:20" );
+	
+	Properties *prpty1 = new Properties( "P215557", "Apartments", "One Brdroom Serviced Apartment Mirissa", "28500000", "" );
+	
+	
+	
+	
+	
+	
+	delete *ad1;
+	delete *prpty1;
+	
+}
